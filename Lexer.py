@@ -91,6 +91,17 @@ def lexer(input_string):
                 temp_token = ''
             tokens.append(SEMICOLON)
 
+        # EQUALS COMO TOKEN SEPARADO
+        elif char == '=':
+            if temp_token:
+                if temp_token.isdigit():  # Si es número, reemplazar por VALUE
+                    tokens.append("VALUE")
+                else:
+                    temp_token = reemplazos.get(temp_token, temp_token)
+                    tokens.append(temp_token)
+                temp_token = ''
+            tokens.append("=")
+
         # PALABRAS Y NUMEROS
         elif char.isspace():
             if temp_token:

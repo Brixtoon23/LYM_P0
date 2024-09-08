@@ -11,15 +11,16 @@ def read_file(file_path):
 def main():
     while True:
         print("\nMenú:")
-        print("1. Ejecutar el programa con code-examples (1).txt")
+        print("1. Ejecutar el programa con test.txt")
         print("2. Ingresarlo manualmente")
         print("3. Ejecutar un archivo personalizado")
         print("4. Salir")
+        print("5. Ejecutar pruebas con qTest.txt")
         
         option = input("Seleccione una opción (1-4): ")
         
         if option == '1':
-            input_code = read_file('code-examples (1).txt')
+            input_code = read_file('test.txt')
         elif option == '2':
             input_code = input("Ingrese el código del robot:\n")
         elif option == '3':
@@ -31,6 +32,8 @@ def main():
                 continue
         elif option == '4':
             break
+        elif option == '5':
+            input_code = read_file('qTest.txt')
         else:
             print("Opción no válida.")
             continue
